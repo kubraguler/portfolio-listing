@@ -18,7 +18,7 @@ export const PortfolioHeader: FunctionComponent<PortfolioHeaderProps> = ({
   return (
     <div className={styles.header}>
       <h1 className={styles.title}>{title}</h1>
-      <p className={styles["valuation-label"]}>Valuation</p>
+      <p className={styles.label}>Valuation</p>
       <span className={styles.valuation}>{gbpFormatter.format(valuation)}</span>
     </div>
   );
