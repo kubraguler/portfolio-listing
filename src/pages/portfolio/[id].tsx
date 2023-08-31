@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Portfolio } from "@/models/portfolio";
 import {
   PortfolioHeader,
@@ -7,21 +8,37 @@ import {
 } from "@/components/PortfolioHeader/PortfolioHeader";
 import { PortfolioContent } from "@/components/PortfolioContent/PortfolioContent";
 
-import styles from "../styles/styles.module.scss";
+import styles from "@/styles/styles.module.scss";
 
 export default function Home() {
+  const router = useRouter();
+
   const [portfolioData, setPortfolioData] = useState<Portfolio | null>(null);
+  const [showNotFound, setShowNotFound] = useState(false);
 
   useEffect(() => {
-    fetch("api/portfolio/1")
-      .then((response) => response.json())
+    if (!router.query.id) {
+      return;
+    }
+
+    fetch(`/api/portfolio/${router.query.id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else if (response.status === 404) {
+          setShowNotFound(true);
+          setPortfolioData(null);
+          throw new Error("404");
+        }
+      })
       .then((data) => {
+        setShowNotFound(false);
         setPortfolioData(data);
       })
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [router.query.id]);
 
   const headerValues = (): PortfolioHeaderProps => {
     const total =
@@ -46,12 +63,16 @@ export default function Home() {
         />
       </Head>
       <section className={styles.portfolio}>
-        <PortfolioHeader
-          title={headerValues().title}
-          valuation={headerValues().valuation}
-        />
+        {showNotFound && <h3>Not found {router.query.id}</h3>}
+
         {portfolioData && (
-          <PortfolioContent holdings={portfolioData.holdings} />
+          <>
+            <PortfolioHeader
+              title={headerValues().title}
+              valuation={headerValues().valuation}
+            />
+            <PortfolioContent holdings={portfolioData.holdings} />
+          </>
         )}
       </section>
     </>
