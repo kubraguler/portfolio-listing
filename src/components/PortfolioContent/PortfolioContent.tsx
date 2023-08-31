@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import { SecurityTable } from "../SecurityTable/SecurityTable";
-import styles from "./PortfolioContent.module.scss";
 import { SecurityHoldings } from "@/models/portfolio";
 import { Sector } from "@/models/sector";
+import styles from "./PortfolioContent.module.scss";
 
 export interface PortfolioContentProps {
   holdings: SecurityHoldings[];

@@ -9,10 +9,6 @@ export interface SecurityTableProps {
 export const SecurityTable: FunctionComponent<SecurityTableProps> = ({
   holdings,
 }) => {
-  const gbpFormatter = new Intl.NumberFormat("en-UK", {
-    style: "currency",
-    currency: "GBP",
-  });
   return (
     <div className={styles.table}>
       <div className={styles.head}>

@@ -1,9 +1,10 @@
 .table {
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   padding: 24px;
   box-sizing: border-box;
   border-collapse: collapse;
+  overflow-x: auto;
 }
 
 .head {

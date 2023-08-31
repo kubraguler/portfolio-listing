@@ -7,12 +7,12 @@ import {
   PortfolioHeaderProps,
 } from "@/components/PortfolioHeader/PortfolioHeader";
 import { PortfolioContent } from "@/components/PortfolioContent/PortfolioContent";
+import { PortfolioNotFound } from "@/components/PortfolioNotFound/PortfolioNotFound";
 
 import styles from "@/styles/styles.module.scss";
 
-export default function Home() {
+export default function PortfolioPage() {
   const router = useRouter();
-
   const [portfolioData, setPortfolioData] = useState<Portfolio | null>(null);
   const [showNotFound, setShowNotFound] = useState(false);
 
@@ -20,7 +20,6 @@ export default function Home() {
     if (!router.query.id) {
       return;
     }
-
     fetch(`/api/portfolio/${router.query.id}`)
       .then((response) => {
         if (response.ok) {
@@ -63,7 +62,7 @@ export default function Home() {
         />
       </Head>
       <section className={styles.portfolio}>
-        {showNotFound && <h3>Not found {router.query.id}</h3>}
+        {showNotFound && <PortfolioNotFound id={router.query.id} />}
 
         {portfolioData && (
           <>
