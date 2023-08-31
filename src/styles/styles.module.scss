@@ -1,11 +1,47 @@
-.portfolio {
-  margin: 50px auto;
+@import "./variables";
+
+.portfolio,
+.not__found,
+.portfolio__wrapper {
+  margin: 0 auto;
+  padding: 12px;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
+  box-sizing: border-box;
 
   @media screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 24px;
   }
 
   @media screen and (min-width: 992px) {
+    padding: 48px;
   }
+}
+
+.portfolio__content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: $text-color;
+}
+
+.link {
+  margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: $text-color;
 }

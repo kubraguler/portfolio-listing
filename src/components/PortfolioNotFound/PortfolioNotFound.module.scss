@@ -1,10 +1,12 @@
+@import "../../styles/_variables";
+
 .not__found {
   width: 100%;
   margin: 0 auto;
   padding: 24px;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: $border-radius;
   text-align: left;
   box-sizing: border-box;
 }

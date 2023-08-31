@@ -1,3 +1,5 @@
+@import "../../styles/_variables";
+
 .table {
   width: 100%;
   margin: 0 auto;
@@ -10,21 +12,21 @@
 .head {
   padding-bottom: 24px;
   margin-bottom: 24px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid $border-color;
 }
 
 .header {
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
-  color: rgba(0, 0, 0, 0.87);
+  color: $text-color;
 }
 
 .cell {
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
-  color: rgba(0, 0, 0, 0.87);
+  color: $text-color;
 }
 
 .header,
@@ -53,11 +55,11 @@
 }
 
 .negative {
-  color: rgba(204, 71, 82, 0.87);
+  color: $red;
 }
 
 .positive {
-  color: rgba(34, 135, 69, 0.87);
+  color: $green;
 }
 
 .align__right {

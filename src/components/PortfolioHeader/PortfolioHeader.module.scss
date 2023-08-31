@@ -1,9 +1,11 @@
+@import "../../styles/_variables";
+
 .header {
   width: 100%;
   padding: 24px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
   text-align: left;
   box-sizing: border-box;
 }
