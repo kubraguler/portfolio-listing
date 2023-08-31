@@ -12,7 +12,7 @@ export const PortfolioContent: FunctionComponent<PortfolioContentProps> = ({
   holdings,
 }) => {
   const holdingsCount = holdings.length;
-  
+
   const sectors = holdings.map((holding) => holding.sector);
   let uniqueSectors: Sector[] = [];
   for (const sector of sectors) {
@@ -22,15 +22,17 @@ export const PortfolioContent: FunctionComponent<PortfolioContentProps> = ({
   }
 
   return (
-    <div className={styles["portfolio-content"]}>
-      <div className={styles["portfolio-content--header"]}>
-        Holdings ({holdingsCount})
-      </div>
-      <div className={styles["portfolio-content--sectors"]}>
-        Sectors:
-        {uniqueSectors.map((sector) => (
-          <p key={sector.id}>{sector.name}</p>
-        ))}
+    <div className={styles.content}>
+      <div className={styles.header}>Holdings ({holdingsCount})</div>
+      <div className={styles.sectors}>
+        <p className={styles.title}>Sectors:</p>
+        <div className={styles.sector__names}>
+          {uniqueSectors.map((sector) => (
+            <p key={sector.id} className={styles.sector__name}>
+              {sector.name}
+            </p>
+          ))}
+        </div>
       </div>
       <SecurityTable holdings={holdings} />
     </div>

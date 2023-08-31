@@ -1,15 +1,55 @@
-.portfolio-content {
+.content {
   width: 100%;
   margin: 10px auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  border-radius: 8px;
   text-align: left;
   box-sizing: border-box;
+}
 
-  &--header,
-  &--sectors {
-    padding: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.header,
+.sectors {
+  padding: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 12px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.sector__name {
+  margin: 0;
+  padding: 7px 16px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: left;
+  border-radius: 100px;
+  background-color: rgba(216, 222, 235, 1);
+}
+.sector__names {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    gap: 12px;
+  }
+
+  @media screen and (min-width: 992px) {
   }
 }
