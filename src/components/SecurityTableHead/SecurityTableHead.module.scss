@@ -1,0 +1,36 @@
+@import "../../styles/_variables";
+
+.head {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid $border-color;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: $text-color;
+}
+
+.cell {
+  white-space: nowrap;
+  width: 120px;
+
+  &:first-child {
+    width: 280px;
+  }
+  &:nth-child(2) {
+    width: 200px;
+  }
+}
+
+.align__right {
+  text-align: right;
+}

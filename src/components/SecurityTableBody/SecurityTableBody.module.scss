@@ -1,0 +1,47 @@
+@import "../../styles/_variables";
+
+.cell {
+  white-space: nowrap;
+  width: 120px;
+
+  &:first-child {
+    width: 280px;
+  }
+  &:nth-child(2) {
+    width: 200px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+}
+
+.cell {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: $text-color;
+}
+
+.body {
+  .row {
+    padding-bottom: 24px;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.align__right {
+  text-align: right;
+}
+
+.negative {
+  color: $red;
+}
+
+.positive {
+  color: $green;
+}
